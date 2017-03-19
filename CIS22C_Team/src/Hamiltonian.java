@@ -1,24 +1,32 @@
 import java.util.*;
 import java.util.Map.Entry;
 
-class Edge<E> implements Comparable<Edge<E>>
+/**
+ * 
+ * City object to store specified information for later use with the undo-stack.
+ * 
+ * @author Michael Kang
+ *
+ */
+
+class City<E> implements Comparable<City<E>>
 {
 	 Vertex<E> source, dest;
 	 double cost;
 
-	 Edge(Vertex<E> src, Vertex<E> dst, Double cst)
+	 City(Vertex<E> src, Vertex<E> dst, Double cst)
 	 {
 	    source = src;
 	    dest = dst;
 	    cost = cst;
 	 }
 
-	 Edge(Vertex<E> src, Vertex<E> dst, Integer cst)
+	 City(Vertex<E> src, Vertex<E> dst, Integer cst)
 	 {
 	    this (src, dst, cst.doubleValue());
 	 }
 
-	 Edge()
+	 City()
 	 {
 	    this(null, null, 1.);
 	 }
@@ -28,11 +36,22 @@ class Edge<E> implements Comparable<Edge<E>>
 		 return "Edge: " + source.getData() + " to " + dest.getData() + ", distance: " + cost;
 	 }
 
-	 public int compareTo(Edge<E> rhs)
+	 public int compareTo(City<E> rhs)
 	 {
 	    return (cost < rhs.cost? -1 : cost > rhs.cost? 1 : 0);
 	 }
 }
+
+/**
+ * 
+ * Hamiltonian Circuit algorithm code to solve graph problem.
+ * 
+ * @author Faisal Albannai
+ *
+ * @param graph = data inputed via file
+ * @param result = list to pass the answer.
+ * 
+ */
 
 public class Hamiltonian<E> extends Graph<E>
 {

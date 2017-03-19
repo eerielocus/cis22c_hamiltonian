@@ -6,6 +6,26 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 
+/**
+ * 
+ * Hamiltonian Circuit:
+ * 
+ * Using the Held-Karp algorithm, this program will attempt to solve the
+ * Traveling Salesperson Problem which requires the salesperson to
+ * visit every city on the graph only once and in a complete cycle.
+ * 
+ * This program will allow for test file inputs, displaying breadth-first, depth-first
+ * and adjacency list for the graph, adding and removing cities and paths, and
+ * undoing previous removals.
+ * 
+ * @author Faisal Albannai, Michael Kang, Ao Yu Hsiao
+ * 
+ * Faisal: Hamiltonian code.
+ * Michael: UI/Menu code.
+ * Ao Yu: Data input files.
+ *
+ */
+
 public class GraphTester
 {
 	// Switch variable for System.out to either go to file or console.
@@ -15,8 +35,8 @@ public class GraphTester
 	public static Scanner userScanner = new Scanner(System.in);
 	
 	// Graph variable to store city/path details. LinkedStack variable to store Edge removals for undo.
-	public static Graph<String> cities = new Graph<String>();
-	public static LinkedStack<Edge<String>> undo = new LinkedStack<Edge<String>>();
+	public static Graph<String> cities = new Graph<>();
+	public static LinkedStack<City<String>> undo = new LinkedStack<>();
 
 	public static void main(String[] args)
 	{
@@ -270,6 +290,7 @@ public class GraphTester
 		}
 	}
 	
+	// Solve Hamiltonian Circuit problem.
 	public static void solveProblem()
 	{
 		int choice;
@@ -291,6 +312,7 @@ public class GraphTester
 			return;
 		}
 
+		// If solved, return true.
 		if(hamil.getHamiltonianCycle(cities, temp))
 		{
 			System.out.println("Solved!\n");
@@ -299,6 +321,7 @@ public class GraphTester
 		else
 			System.out.println("Can't be solved.\n");
 		
+		// If solved = true, print out results. Else skip.
 		if(solved)
 		{
 			System.out.println("The Hamiltonian Circuit is:\n");
@@ -492,7 +515,7 @@ public class GraphTester
 					// Store removed edge in temporary Edge object and push into undo stack.
 					try
 					{
-						Edge<String> temp = new Edge<String>(cities.vertexSet.get(source), cities.vertexSet.get(source).adjList.get(dest).first, cities.vertexSet.get(source).adjList.get(dest).second);
+						City<String> temp = new City<String>(cities.vertexSet.get(source), cities.vertexSet.get(source).adjList.get(dest).first, cities.vertexSet.get(source).adjList.get(dest).second);
 						undo.push(temp);
 						
 						// Check if successfully removed.
@@ -565,7 +588,7 @@ public class GraphTester
 	
 	public static void undoRemove()
 	{
-		Edge<String> recover;
+		City<String> recover;
 		int choice;
 		
 		// Check if there is any data in undo stack.

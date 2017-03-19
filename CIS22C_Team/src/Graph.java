@@ -1,12 +1,16 @@
 import java.util.*;
 import java.util.Map.Entry;
 
+/**
+ * 
+ * Given code.
+ * 
+ */
+
 interface Visitor<T>
 {
 	public void visit(T obj);
 }
-
-// --- assumes definition of simple class Pair<E, F>
 
 // --- Vertex class ------------------------------------------------------
 class Vertex<E>
