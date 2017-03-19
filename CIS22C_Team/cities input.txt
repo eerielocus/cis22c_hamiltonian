@@ -1,0 +1,40 @@
+4
+San Francisco
+San Jose
+1
+Sacramento
+2
+Bakersfield
+4
+Los Angeles
+6
+4
+Sacramento
+San Jose
+2
+Bakersfield
+4
+Los Angeles
+6
+Santa Barbara
+6
+3
+San Jose
+Bakersfield
+4
+Santa Barbara
+4
+Los Angeles
+5
+3
+Santa Barbara
+Bakersfield
+2
+Los Angeles
+2
+San Diego
+4
+1
+Los Angeles
+San Diego
+3

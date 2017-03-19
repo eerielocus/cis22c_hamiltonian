@@ -1,0 +1,50 @@
+2
+Boston
+Albany
+3
+New York
+4
+2
+Albany
+New York
+2
+Syracuse
+2
+2
+New York
+Syracuse
+4
+Philadelphia
+2
+1
+Syracuse
+Philadelphia
+4
+1
+Philadelphia
+Washington DC
+2
+2
+Washington DC
+Pittsburgh
+4
+Charlotte
+6
+2
+Pittsburgh
+Columbus
+3
+Charlotte
+7
+2
+Columbus
+Charlotte
+7
+Atlanta
+8
+2
+Atlanta
+Charlotte
+4
+Orlando
+6

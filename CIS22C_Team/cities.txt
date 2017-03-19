@@ -1,0 +1,22 @@
+3
+San Francisco
+San Jose
+2
+Santa Barbara
+10
+Los Angeles
+18
+2
+San Jose
+Santa Barbara
+4
+Los Angeles
+13
+3
+San Diego
+Los Angeles
+2
+San Jose
+17
+San Francisco
+24
